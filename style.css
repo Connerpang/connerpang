@@ -1,5 +1,30 @@
 /* webcoder assignment CSS */
 
+/* ===========================
+--- Intro
+============================ */
+.intro {
+	width:100%;
+	position:relative;	
+	background: url(CaraTurnsONE.jpg) no-repeat top center;
+  background-size: cover;
+  background-position: 0px -50px;
+  height: -100vh;
+  
+}
+
+#intro.intro {
+  padding:100px 0 50px 0;
+  
+ 
+}
+
+
+
+
+
+
+
 /*  ----- HTML Body Styles -----  */
 body {
   position: relative;
@@ -9,6 +34,7 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   /* Padding for top navbar fixed  */
   padding-top: 30px; 
+  
 }
 
 body{
@@ -17,26 +43,73 @@ body{
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  border-top: 0;
+  border-top: 20;
   height: 100vh !important;
-  /* position: relative;
+  position: relative;
   text-align: center;
-  overflow: hidden;
-  justify-content: center; */
+  overflow: auto;
+  justify-content: center;
+
+}
+
+.title1{
+  color:  white;
 
 }
 
 
-#navbar1{
+.birthday{
+  color: blue;
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: 600;
+
+}
+
+.my-form{
+  text-align: left;
+
+
+}
+
+.table-title{
+  color:white;
+
+
+}
+
+.table{
   background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  border-color: grey;
+  color: violet;
+
 
 }
+
+.mobile{
+  color: red;
+  background: transparent;
+  font-size: 13px;
+  
+}
+
+#h4{
+  color: white;
+}
+
+
+
+
+
+
 
 html {
   height: 100%;
   box-sizing: border-box;
 }
-
 
 
 
