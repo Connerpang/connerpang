@@ -24,7 +24,21 @@
         <link rel="stylesheet" type="text/css" media="screen" href="img/style.css" />
 
         <!-- Fancy box -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen"> -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
+        <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" /> -->
+
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.7" type="text/css" media="screen" />
+
+
+        <!-- Optionally add helpers - button, thumbnail and/or media -->
+        <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+
+
+        <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+
 
     
         <!-- For development purposes Only -->
@@ -67,13 +81,32 @@
                 <div class="col-xs-12
                             col-sm-4
                             col-md-4
-                            col-lg-4 show">
-                    <div class="img-thumbnail">
+                            col-lg-4 show">                       
+                     <div class="img-thumbnail">
                         <img src="Cara-26a.jpg" class="img-fluid rounded" alt="">
                         <div class="card-body">
                             <h5>Cara's 1year old Photoshoot</h3>
                             <p></p>
-                            <a href="Cara-26a.jpg" class="btn btn-primary btn-sm" target="blank">click</a>
+                            <a class="btn btn-primary pull-right fancybox" 
+                                rel="iceland" 
+                                href="Cara-26a.jpg" 
+                                title="I love dried leaves" targe="blank">
+                                View Photos</a>
+                            <!-- <a class="fancybox hidden" 
+                                rel="iceland" 
+                                href="Cara-6b.jpg" 
+                                title="Northern Lights"></a> -->
+                            <!-- <a href="Cara-26a.jpg" class="btn btn-primary btn-sm" target="blank" -->
+                            <!-- <a href="http://i408.photobucket.com/albums/pp168/Weishyang/Cara-38a.jpg" 
+                                data-fancybox data-caption="My caption"
+                                class="btn btn-primary btn-sm">click</a>
+                                <img src="http://i408.photobucket.com/albums/pp168/Weishyang/Cara-38a.jpg" width="300" alt="" /> -->
+                            <!-- </a> -->
+                            <!-- <a class="fancybox" rel="group" href="Cara-1b.jpg"><img src="Cara-1b.jpg" width="400" alt="" /></a>
+                        <a class="fancybox" rel="group" href="Cara-2b.jpg"><img src="Cara-2b.jpg" width="400" alt="" /></a>
+                        <a class="fancybox" rel="group" href="Cara-6b.jpg"><img src="Cara-6b.jpg" width="400" alt="" /></a>
+                        <a class="fancybox" rel="group" href="Cara-12b.jpg"><img src="Cara-12b.jpg" width="400" alt="" /></a> -->
+                           
 
                            
                         
@@ -113,7 +146,10 @@
                         <div class="card-body">
                             <h5>Cara's Full Month Photoshoot</h3>
                             <p></p>
-                            <a href="Cara-2b.jpg" class="btn btn-primary btn-sm">click</a>
+                            <a href="Cara-1b.jpg" class="btn btn-primary btn-sm" title="I'm so sleepy" target="blank">View photo</a>
+                            <!-- <a data-fancybox="gallery" href="big_Cara-1b.jpg"><img src="small_Cara-1b.jpg"></a> -->
+                            <!-- <a data-fancybox="gallery" href="big_2.jpg"><img src="small_2.jpg"></a> -->
+                            
                         </div>
                     </div>
                 </div>
@@ -137,10 +173,10 @@
 
                 <!-- Row3: Column 4 -->
                 <div class="col-xs-12
-                col-sm-6
-                col-md-6
-                col-lg-6
-                text-center show">
+                            col-sm-6
+                            col-md-6
+                            col-lg-6
+                            text-center show">
                     <h1 class="animated infinite tada"><span class="title1">Hello! My Name is Cara Pang Min Xun (彭敏瑄)</span></h1>
                     <hr>
                     <p class="title1">
@@ -158,7 +194,9 @@
             <!-- Row4: Form & Text -->
             <form 	action="https://script.google.com/macros/s/AKfycby8g9jgJv0c4N8UpOoz5Ir1Wj0c36N-MaEyeFSHh_nm-UqzeVM/exec" 
             method="post"
-            class="my-form">
+            class="my-form"
+            id="myForm"
+            onsubmit="target_popup()">
             <div class="row">
                 <!-- Row4 Column1: form -->
                 <div class="col-xs-12
@@ -178,10 +216,10 @@
                                             placeholder="Conner Pang" 
                                             class="form-control"
                                             required>
-                                    <div class="alert alert-danger hidden"
+                                    <!-- <div class="alert alert-danger hidden"
                                                 id="alert-id">
                                                 Name should be at least 4 characters long
-                                            </div>
+                                            </div> -->
                                 </div>
                                 <div class="form-group">
                                     <label for="email-id">Email: </label>
@@ -214,16 +252,17 @@
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-default" 
-                                    id="mySubmit"
-                                    value="Submit the form">
-                                <button onclick="myFunction()">Submit</button>
+                                    <button type="submit" class="btn btn-default my-btn form-control" id="submit-btn">Submit</button>                   
+                                    <div class="alert alert-danger alert-dismissible fade in" hidden id="alert-id">
+                                        <!-- <button type="button" class="close" id="close-id"><span>&times;</span></button> -->
+                                        <span class="note1">Thank you! I will get in touch.</span>
+                                    </div>
                                 </div>
-                                <!-- <button type="button" class="thank you" id="close-id"></button> -->
-                            </form>
+                               
                         </div>
                     </div>
                 </div>
+        </form>
                 <!-- end of Row4 Column1 -->
     
                 <!-- Row4 Column2: text -->
@@ -254,6 +293,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    
 
 
                 <div class="col-xs-18
@@ -273,10 +313,10 @@
                                 <i class="fa fa-telegram fa-fw"></i> three
                             </a> -->
                         </div>
-                    </div>
                 </div>
-                <!-- end of Row4 Column2 -->
             </div>
+                <!-- end of Row4 Column2 -->
+        </div>
             <br>
             <!-- end of Row4: Form & Text -->
 
@@ -343,19 +383,41 @@
         <!-- end of Container -->
 
         <!-- JavaScript - jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script> -->
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script> -->
+        <!-- <script src="jquery_ws.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        <!-- JS -->
+                <!-- Add jQuery library -->
+        <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/tether/1.4.0/tether.min.js"></script>
+        <script type="text/javascript" src="javascript/index.js"></script> -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-        <script src="jquery_ws.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/tether/1.4.0/tether.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="javascript/index.js"></script>
 
+
+     
+    
+    
+                
+	    
         
 
+
+        <!-- <script type="text/javascript">
+            $(document).ready(function() {
+                $(".fancybox").fancybox();
+            });
+        </script> -->
         
         <!-- Customise JavaScript -->
         <script src="javascript.js"></script>
+     
     
     </body>
 

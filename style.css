@@ -43,7 +43,7 @@ body{
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  border-top: 20;
+  /* border-top: -100; */
   height: 100vh !important;
   position: relative;
   text-align: center;
@@ -100,9 +100,37 @@ body{
   color: white;
 }
 
+#reset{
+  color: white;
+  background-color:#17a2b8;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  line-height: 1.25;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
 
+}
 
+#submit-id{
+  border-color: blue;
+}
 
+#myForm{
+  color: black;
+
+}
+
+.alert-success{
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+
+}
 
 
 
