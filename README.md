@@ -59,10 +59,10 @@ My work combines **Angular**, **LangGraph**, and **GenAI** to deliver smarter, m
 ### 🌐 Connect with Me
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/connerpang" target="_blank">
+  <a href="www.linkedin.com/in/conner-ws-pang" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0072b1?logo=linkedin&logoColor=white&style=for-the-badge" />
   </a>
-  <a href="mailto:your.email@domain.com">
+  <a href="mailto:pweishyang@gmail.com">
     <img src="https://img.shields.io/badge/Email-0D1117?logo=gmail&logoColor=00FFFF&style=for-the-badge" />
   </a>
   <a href="https://github.com/ConnerPang">
